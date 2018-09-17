@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Happiness 😊</title>
+    <title>Happiness 😊 </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-  yay!
-  there will be your dashboard
+  <body id="section_page">
+ 
+    <nav>
+      <% if user_signed_in? %>
+        <h2 id="welcoming_signedin_user"> HI, <%= current_user.nickname%> </h2>
+            <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => 'sign_out' %>
+            <%= link_to 'EDIT PROFILE', edit_user_registration_path, :class => 'edit_profile' %>
+        <p><a href="/tags"> Tags </a></p>
+        <p><a href="/posts"> Posts </a></p>
+        
+      <% end %>
+  </nav>
+  
     <%= yield %>
-  </body>
+ 
 </html>
