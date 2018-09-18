@@ -4,11 +4,9 @@
   <strong>Text:</strong>
   <%= @post.text %>
 </p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
+Tags : <% @post.tag_list.each do |tag| %>
+  <a href='/tags/<%= tag %>'> <%= tag%></a>
+<% end %>
 
 <p>
   <strong>Date:</strong>
