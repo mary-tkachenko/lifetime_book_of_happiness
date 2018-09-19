@@ -5,6 +5,10 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    @results = Geocoder.search([40.708165199999996, -74.0064806])
+    pp @results.first.address
+
+
   end
 
   # GET /locations/1
