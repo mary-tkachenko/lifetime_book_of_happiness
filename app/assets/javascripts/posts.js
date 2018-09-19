@@ -12,7 +12,8 @@ $(document).on('turbolinks:load', function() {
     navigator.geolocation.getCurrentPosition(
         (position) => {
             console.log(position.coords.latitude, position.coords.longitude);
-            $('#location_latitude').val(position.coords.latitude);
+            $('#post_latitude').val(position.coords.latitude);
+            $('#post_longitude').val(position.coords.longitude);
         },
         (error) => {
             console.log(error);

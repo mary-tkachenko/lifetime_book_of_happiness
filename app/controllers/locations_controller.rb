@@ -4,9 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
-    @results = Geocoder.search([40.708165199999996, -74.0064806])
-    pp @results.first.address
+    @posts = Post.all
 
 
   end
