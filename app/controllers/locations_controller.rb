@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
     @posts = Post.all
 
 
+
   end
 
   # GET /locations/1
