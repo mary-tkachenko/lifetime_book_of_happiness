@@ -1,30 +1,16 @@
 class UsersController < ApplicationController
     def index
-        # method: get
-        # action: index
-        # template: students/index.html.erb
        @current_user = current_user
-      end
+    end
 
-  
     
       def show
-        # method: get
-        # action: index
-        # template: students/show.html.erb
-     
       end
     
       def new
-        # method: get
-        # action: index
-        # template: students/new.html.erb
       end
     
       def edit
-        # method: get
-        # action: index
-        # template: students/edit.html.erb
       end
 
       def sign_out
@@ -48,9 +34,7 @@ class UsersController < ApplicationController
           end
         end
       end
-      end
     
-      ...
     
       private
         def user_params
@@ -59,5 +43,5 @@ class UsersController < ApplicationController
           # it will return an empty hash.
           params.require(:user).permit(:nickname, :email)
         end
-    
+
 end
