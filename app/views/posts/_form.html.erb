@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true, id: 'geolocate_me') do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -26,6 +26,12 @@
     <%= form.label :date %>
     <%= form.datetime_select :date %>
   </div>
+
+  <%= fields_for :location, post.location do |location_fields| %>
+    <%= location_fields.hidden_field :latitude %>
+  <% end %>
+
+  
 
   <div class="actions">
    <button id="submit"> Submit</button>
