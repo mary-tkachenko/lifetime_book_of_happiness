@@ -54,10 +54,15 @@
 
       // Array of markers
       var markers = [
+        <% @posts.each do |post|%>
+        <% if post.latitude && post.longitude %>
         {
-          coords:{lat:40.708165199999996,lng:-74.0064806},
-          content:'<h1>NYCDA</h1>'
+          coords:{lat: <%= post.latitude %> ,lng:<%= post.longitude %>},
+          content:'<h1><%= post.text %></h1>'
         },
+        <% end %>
+        <% end %>
+
       ];
 
       // Loop through markers

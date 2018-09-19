@@ -27,11 +27,9 @@
     <%= form.datetime_select :date %>
   </div>
 
-  <%= fields_for :location, post.location do |location_fields| %>
-    <%= location_fields.hidden_field :latitude %>
-  <% end %>
+  <%= form.hidden_field  :latitude, :value => :latitude %>
 
-  
+  <%= form.hidden_field  :longitude, :value => :longitude %>
 
   <div class="actions">
    <button id="submit"> Submit</button>
