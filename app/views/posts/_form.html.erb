@@ -16,10 +16,19 @@
     <%= form.text_field :text %>
   </div>
 
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
   <div class='field'>
     <%= form.label :tag_list, 'Tags (separated by commas)' %><br/>
     <%= form.text_field :tag_list %>
   </div>
+
+  <%= form.file_field :uploads, multiple: true %>
+  <%= form.file_field :uploads, multiple: true %>
+  <%= form.file_field :uploads, multiple: true %>
 
 
   <div class="field">

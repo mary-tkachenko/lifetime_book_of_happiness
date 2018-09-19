@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-    has_many :posts, :through => :clouds
+    belongs_to :post
 end

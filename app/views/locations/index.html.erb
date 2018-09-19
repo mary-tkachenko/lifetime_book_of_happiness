@@ -31,7 +31,7 @@
       // Listen for click on map
       google.maps.event.addListener(map, 'click', function(event){
         // Add marker
-        addMarker({coords:event.latLng});
+        // addMarker({coords:event.latLng});
       });
 
       /*
@@ -55,12 +55,19 @@
       // Array of markers
       var markers = [
         <% @posts.each do |post|%>
-        <% if post.latitude && post.longitude %>
-        {
-          coords:{lat: <%= post.latitude %> ,lng:<%= post.longitude %>},
-          content:'<h1><%= post.text %></h1>'
-        },
-        <% end %>
+          <% if post.latitude && post.longitude %>
+          {
+            coords:{lat: <%= post.latitude %> ,lng:<%= post.longitude %>},
+            <%specific_post = Post.find(post.id)%>
+            <% if specific_post.uploads.length != 0%>
+              <%specific_post.uploads.each do |image| %>
+                content:'<h1><%= image_tag image%> </br><%= post.text%></h1>',
+              <% end %>
+            <% else %>
+                content:'<h1><%= post.text%></h1>',
+            <% end %>
+          },
+          <% end %>
         <% end %>
 
       ];
