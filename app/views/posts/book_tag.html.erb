@@ -1,0 +1,27 @@
+Create a book by the tag <%=params[:search]%>:
+<%= form_tag("/book/tag", local: true, method: "get") do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil%>
+  </p>
+<% end %>
+
+<% if @tags.length != 0 %>
+    <% @tags.each do |taged|%>
+    <p>
+        <%= taged.date %>
+        <%= taged.text %>
+        <% taged.tag_list.each do |tag| %>
+         <td><a href='/tags/<%= tag %>'> <%= tag%></a></td>
+        <% end %>
+    </p>
+    <% end %>
+    <% elsif params[:search] != nil && @tags.length == 0 %>
+    " Sorry, there are no posts by tag "<%=params[:search] %>."
+<% end %>
+
+
+
+
+
+

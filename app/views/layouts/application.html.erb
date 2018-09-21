@@ -23,15 +23,9 @@
         <p><a href="/tags"> Tags </a></p>
         <p><a href="/posts"> Posts </a></p>
         <p><a href="/locations"> Locations </a></p>
+        <p><a href="/gallery"> Gallery </a></p>
+        <p><a href="/book"> Book </a></p>
 
-      <h1>Here you can search</h1>
-        <%= search_form_for @search do |f| %>
-          <div class="field">
-            <%= f.label :text_cont, "Text contains"%>
-            <%= f.text_field :text_cont%>
-          </div>
-          <div class="actions"><%= f.submit "Search" %></div>
-        <% end %>
       <% end %>
   </nav>
   

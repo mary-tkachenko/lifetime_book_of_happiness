@@ -1,0 +1,21 @@
+Create a book by the year <%=params[:year]%>:
+
+<form>
+  <select name='year' onchange='this.form.submit()'>
+  <option>Select a year</option>
+  <p><% @unique_year.each do |year|%></p>
+    <option><%= year %></option>
+    <% end %>
+  </select>
+  <noscript><input type="submit" value="Submit"></noscript>
+</form>
+
+<% @years.each do |year|%>
+  <p>
+    <%= year.date %>
+    <%= year.text %>
+    <% year.tag_list.each do |tags| %>
+    <%= tags%>
+  <% end %>
+  </p>
+<% end %>

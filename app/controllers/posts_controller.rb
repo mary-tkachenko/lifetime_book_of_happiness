@@ -1,22 +1,39 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_search
   # GET /posts
   # GET /posts.json
   def index
-    # if params[:tag]
-    #   @posts = Post.tagged_with(params[:tag])
-    # else
-    #   @posts = Post.all
-    # end
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).sort_by &:created_at
+    else
+      @posts = @search.result.sort_by &:created_at
+    end
 
-    @search = Post.search(params[:q])
-    @posts = @search.result
+    @unique_year = Post.select("date").map{ |i| i.date.year }.uniq
+    @unique_month = Post.select("date").map{ |i| i.date.month }.uniq
 
+    @posts_by_year = Post.where('extract(year  from date) = ?', params[:year])
+    puts @posts_by_year
+
+  
+  end
+
+  def book
+  end
+
+  def book_year
+    @unique_year = Post.select("date").map{ |i| i.date.year }.uniq
+    @years = Post.where('extract(year  from date) = ?', params[:year])
+  end
+
+  def book_tag
+    @tags  = Post.tagged_with(params[:search])
+    # @tags = Post.tagged_with("name like ?", params[:search])
   end
 
   # GET /posts/1
-  # GET /posts/1.json
+  # GET /posts/1.jsoncle
   def show
     @post = Post.find(params[:id])
   end
@@ -28,6 +45,10 @@ class PostsController < ApplicationController
 
   def tags
     
+  end
+
+  def gallery
+    @posts = Post.all
   end
 
   # GET /posts/1/edit
@@ -54,10 +75,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    post_params = {
-      text: params[:post][:text],
-      date: params[:post][:date],
-    }
+    # post_params = {
+    #   text: params[:post][:text],
+    #   date: params[:post][:date],
+    # }
     
     respond_to do |format|
       if @post.update(post_params)
@@ -90,4 +111,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:text, :date, :tag_list, :latitude, :longitude, uploads: [])
     end
+
+    def set_search
+      @search = Post.search(params[:q])
+    end
+
 end
