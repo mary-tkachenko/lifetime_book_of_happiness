@@ -23,8 +23,12 @@ class PostsController < ApplicationController
   end
 
   def book_year
-    @unique_year = Post.select("date").map{ |i| i.date.year }.uniq
-    @years = Post.where('extract(year  from date) = ?', params[:year])
+    @unique_years = Post.select("date").map{ |i| i.date.year }.uniq
+    if params[:year] == 'all' or not params.key?(:year)
+      @posts_by_year = Post.all
+    else
+      @posts_by_year = Post.where('extract(year from date) = ?', params[:year])
+    end
   end
 
   def book_tag
