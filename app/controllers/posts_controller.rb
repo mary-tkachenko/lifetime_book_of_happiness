@@ -24,10 +24,19 @@ class PostsController < ApplicationController
 
   def book_year
     @unique_years = Post.select("date").map{ |i| i.date.year }.uniq
+    @unique_months = [
+      ['January', 1],
+      ['September', 9],
+    ]
+
     if params[:year] == 'all' or not params.key?(:year)
-      @posts_by_year = Post.all
+      @posts = Post.all
     else
-      @posts_by_year = Post.where('extract(year from date) = ?', params[:year])
+      @posts = Post.where('extract(year from date) = ?', params[:year])
+    end
+
+    if params[:month] and params[:month] != 'all'
+      @posts = @posts.where('extract(month from date) = ?', params[:month])
     end
   end
 

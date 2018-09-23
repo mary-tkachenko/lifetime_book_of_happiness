@@ -5,10 +5,16 @@ Create a book by the year <%= params[:year] %>:
     <option value="all">Select a year</option>
     <%= options_for_select(@unique_years, params[:year]) %>
   </select>
+
+   <select name='month' onchange='this.form.submit()'>
+    <option value="all">Select a month</option>
+    <%= options_for_select(@unique_months, params[:month]) %>
+  </select>
+
   <noscript><input type="submit" value="Submit"></noscript>
 </form>
 
-<% @posts_by_year.each do |post|%>
+<% @posts.each do |post|%>
   <p>
     <%= post.date %>
     <%= post.text %>
