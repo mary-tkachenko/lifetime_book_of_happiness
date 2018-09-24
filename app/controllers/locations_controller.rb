@@ -5,9 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @posts = Post.all
-
-
-
+    # render layout: "map_layout"
   end
 
   # GET /locations/1

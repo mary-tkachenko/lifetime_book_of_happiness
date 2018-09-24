@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_search
   # GET /posts
@@ -128,5 +129,6 @@ class PostsController < ApplicationController
     def set_search
       @search = Post.search(params[:q])
     end
+
 
 end

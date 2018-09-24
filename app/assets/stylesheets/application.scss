@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+  @import "semantic-ui";
+
+  #map{
+    height:600px;
+    width:100%;
+  }

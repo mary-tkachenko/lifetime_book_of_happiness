@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-    has_many :posts, :through => :clouds
+    has_many :posts
 end
