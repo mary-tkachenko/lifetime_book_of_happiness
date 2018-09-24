@@ -1,12 +1,15 @@
 
 <% if !user_signed_in? %> 
   <div id="welcome_page">
-    <p id="welcoming_users">WELCOME TO THE LIFETIME BOOK OF HAPPINESS</p>
+    <%# <p id="welcoming_users">WELCOME TO THE LIFETIME BOOK OF HAPPINESS</p> %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="ui large buttons welcome_button">
-      <button class="ui button button_signin"><a href="/users/sign_in">SIGN IN</a></button>
-      <button class="ui button button_signup"><a href="/users/sign_up">SIGN UP</a></button>
+    <div id='welcoming_logo'>
+      <img src="/logo.png">
+    </div>
+    <div class="ui large buttons" id="welcome_buttons">
+      <button class="ui button" id="button_signin"><a href="/users/sign_in">SIGN IN</a></button>
+      <button class="ui button" id="button_signup"><a href="/users/sign_up">SIGN UP</a></button>
     </div>
   </div>
 <% end %>
