@@ -22,7 +22,7 @@
   <body id="section_page">
     <nav>
       <% if user_signed_in? %>
-        <h2 id="welcoming_signedin_user"> HI, <%= current_user.nickname%> </h2>
+        <h2 id="welcoming_signedin_user"> HI, <%= current_user.nickname%>!</h2>
             <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => 'sign_out' %>
             <%= link_to 'EDIT PROFILE', edit_user_registration_path, :class => 'edit_profile' %>
         <p><a href="/tags"> Tags </a></p>

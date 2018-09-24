@@ -1,5 +1,6 @@
-<h2>Sign up</h2>
-
+<div id="signup_page">
+<h2 class="userpage">SIGN UP</h2>
+<img src="/image.png" id="page_heart">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -32,3 +33,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

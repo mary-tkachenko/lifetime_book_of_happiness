@@ -62,12 +62,14 @@
 
 h2 {
   font-family: 'Noto Sans', sans-serif;
+  color:#ec4b4e; 
+  text-transform: uppercase;
 }
 
 
 .password, .email, .submit_button, .new_password, .nickname,  {
   background: transparent;
-  border: 1px solid #fc0d1b;
+  border: 1px solid #ec4b4e;
   height: 30px;
   width: 300px;
   margin: 10px;
@@ -88,4 +90,34 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: rgb(12, 12, 12);
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.submit_button {
+  color: white;
+  background-color:#ec4b4e; 
+}
+
+.submit_button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(225, 225, 225, 0.19);
+}
+
+#page_heart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 63%;
+  margin-top: 30px;
+}
+
+#login_page, #signup_page {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 21%;
+  margin-top: 20px;
+  
+}
+
+.userpage {
+  margin-top: 53px;
 }
