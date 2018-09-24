@@ -20,3 +20,33 @@
     height:600px;
     width:100%;
   }
+  #welcoming_logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 41%;
+  }
+
+  #welcome_buttons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 18%;
+}
+
+#button_signin, #button_signup {
+  background-color: white;
+  border: 1px solid #ec4b4e;
+  margin: 5px;
+}
+
+#button_signin:hover, #button_signup:hover {
+  background-color: #ec4b4e;
+}
+
+#button_signin a:hover, #button_signup a:hover {
+  background-color: #ec4b4e;
+  color: black;
+}
+
+

@@ -19,7 +19,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body id="section_page">
- 
     <nav>
       <% if user_signed_in? %>
         <h2 id="welcoming_signedin_user"> HI, <%= current_user.nickname%> </h2>
