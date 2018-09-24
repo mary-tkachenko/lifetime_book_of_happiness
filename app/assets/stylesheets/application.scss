@@ -15,11 +15,13 @@
  */
 
   @import "semantic-ui";
-
+// Map
   #map{
     height:600px;
     width:100%;
   }
+
+// Welcome page
   #welcoming_logo img {
     display: block;
     margin-left: auto;
@@ -43,10 +45,47 @@
 #button_signin:hover, #button_signup:hover {
   background-color: #ec4b4e;
 }
+#button_signin a, #button_signup a {
+  color: black;
+}
 
 #button_signin a:hover, #button_signup a:hover {
   background-color: #ec4b4e;
   color: black;
 }
 
+// Sign In Form
+#login_page {
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+}
 
+h2 {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.password, .email, .submit_button, .new_password, .nickname,  {
+  background: transparent;
+  border: 1px solid #fc0d1b;
+  height: 30px;
+  width: 300px;
+  margin: 10px;
+}
+
+input {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(12, 12, 12);
+  transition: background-color 5000s ease-in-out 0s;
+}
