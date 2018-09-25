@@ -259,6 +259,10 @@ td a:hover {
 .edit, .back {
   font-size: 20px;
 }
+.back_to {
+  font-size: 20px;
+  margin-left: 100px;
+}
 
 .edit:hover, .back:hover, #post_tags a:hover {
   background-color: white;
@@ -286,4 +290,43 @@ td a:hover {
 #gallery img {
   height: 200px;
   padding: 20px;
+}
+
+.field input {
+  border: 1px solid #ec4b4e;
+}
+
+.text_input {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+#post_tag_list {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#uploads {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.post_date_form {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#submit {
+  border: 1px solid #ec4b4e;
+}
+
+.actions button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#back_to {
+  margin-bottom: 50px;
 }

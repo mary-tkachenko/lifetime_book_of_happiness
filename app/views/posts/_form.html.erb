@@ -13,31 +13,27 @@
 
   <div class="field">
     <%= form.label :text %>
-    <%= form.text_field :text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :text, :class => 'text_input'%>
   </div>
 
   <div class='field'>
     <%= form.label :tag_list, 'Tags (separated by commas)' %><br/>
     <%= form.text_field :tag_list %>
   </div>
-
-  <%= form.file_field :uploads, multiple: true %>
-  <%= form.file_field :uploads, multiple: true %>
-  <%= form.file_field :uploads, multiple: true %>
-
+  
+  <p>Images</p>
+  <div id="uploads">
+    <%= form.file_field :uploads, multiple: true %>
+    <%= form.file_field :uploads, multiple: true %>
+    <%= form.file_field :uploads, multiple: true %>
+  </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
+    <%= form.label :date, :class => 'post_date_form' %>
+    <%= form.datetime_select :date%>
   </div>
 
   <%= form.hidden_field  :latitude, :value => :latitude %>
-
   <%= form.hidden_field  :longitude, :value => :longitude %>
 
   <div class="actions">
