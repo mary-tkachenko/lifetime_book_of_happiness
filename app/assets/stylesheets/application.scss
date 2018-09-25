@@ -340,3 +340,21 @@ td a:hover {
 .map a:hover {
   background-color: transparent;
 }
+#book_sections {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  width: 800px;
+  margin-left: 308px;
+}
+#book_sections a {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#book_sections a:hover {
+  background-color: #ec4b4e;
+  color: white;
+}
+
