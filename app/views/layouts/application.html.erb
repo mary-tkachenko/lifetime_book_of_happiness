@@ -22,14 +22,22 @@
   <body id="section_page">
     <nav>
       <% if user_signed_in? %>
-        <h2 id="welcoming_signedin_user"> HI, <%= current_user.nickname%>!</h2>
-            <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => 'sign_out' %>
-            <%= link_to 'EDIT PROFILE', edit_user_registration_path, :class => 'edit_profile' %>
-        <p><a href="/tags"> Tags </a></p>
-        <p><a href="/posts"> Posts </a></p>
-        <p><a href="/locations"> Locations </a></p>
-        <p><a href="/gallery"> Gallery </a></p>
-        <p><a href="/book"> Book </a></p>
+        <div class="ui massive menu" id="navbar">
+          <a class="item section" href="/posts">POSTS</a>
+          <a class="item section" href="/tags">TAGS</a>
+          <a class="item section" href="/locations">MAP</a>
+          <a class="item section" href="/gallery">GALLERY</a>
+          <a class="item section" href="/book">BOOK</a>
+        <div class="right menu">
+          <div class="item">
+              <div class="ui primary button" id="sign_out_layout"><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => 'sign_out' %></div>
+          </div>
+              <div class="item">
+              <div class="ui primary button" id="edit_profile_layout"><%= link_to 'EDIT PROFILE', edit_user_registration_path, :class => 'edit_profile' %></div>
+          </div>
+          </div>
+        </div>
+        <a href="/"><img src="/image.png" class="every_page_heart"></a>
 
       <% end %>
   </nav>
