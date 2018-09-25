@@ -177,9 +177,10 @@ select:-webkit-autofill:focus {
   margin: 20px;
 
 }
-a:visited {
+a:visited, a:link {
   color: #ec4b4e;
 }
+
 .s:hover, .m:hover, .l:hover {
   background-color: white;
   color: black;
@@ -190,6 +191,54 @@ a:visited {
   margin-left: 50px;
 }
 
-.post_form {
-  
+select {
+  background-color: #ec4b4e;
+  width: 130px;
+  height: 36px;
+  color: white;
+  outline: none;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+form {
+  margin-left: 100px;
+
+}
+
+#post_form {
+  width: 1200px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+tr {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+}
+.search_form {
+  margin-bottom: 30px;
+}
+.search_form input {
+  height: 30px;
+  width: 200px;
+  border: 1px solid #ec4b4e;
+  font-family: 'Noto Sans', sans-serif;
+}
+.search_submit {
+  background-color: #ec4b4e;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.search_submit:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search_for {
+  color:#ec4b4e; 
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+td a:hover {
+  background: transparent;
 }
