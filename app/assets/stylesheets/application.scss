@@ -242,3 +242,33 @@ tr {
 td a:hover {
   background: transparent;
 }
+
+// Specific post
+
+#specific_post {
+  width: 1200px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+#post_text, #post_tags, #post_date {
+  font-size: 15px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.edit, .back {
+  font-size: 20px;
+}
+
+.edit:hover, .back:hover, #post_tags a:hover {
+  background-color: white;
+}
+.edit {
+  margin-left: 100px;
+  margin-right: 30px;
+}
+
+.functions {
+  margin-bottom: 100px;
+}
+

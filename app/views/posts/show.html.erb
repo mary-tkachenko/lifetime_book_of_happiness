@@ -1,30 +1,31 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
-
-<% if @post.uploads.length != 0 %>
-  <p>
-    <%@post.uploads.each do |image|%>
-    <%= image_tag image %>
-    <% end %>
+<div id="specific_post">
+  <p id="post_text">
+    <%= @post.text %>
   </p>
-<% end %>
 
-<p>
-Tags : <% @post.tag_list.each do |tag| %>
-  <a href='/tags/<%= tag %>'> <%= tag%></a>
-<% end %>
-</p>
+  <% if @post.uploads.length != 0 %>
+    <p>
+      <%@post.uploads.each do |image|%>
+      <%= image_tag image %>
+      <% end %>
+    </p>
+  <% end %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
+  <p id="post_tags">
+  Tags : <% @post.tag_list.each do |tag| %>
+    <a href='/tags/<%= tag %>'> <%= tag%></a>
+  <% end %>
+  </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <p id="post_date">
+    <strong>Date:</strong>
+    <%= @post.date %>
+  </p>
+</div>
+<div class="functions">
+  <%= link_to 'Edit', edit_post_path(@post), :class => 'edit' %> 
+  <%= link_to 'Back', posts_path, :class => 'back' %>
+</div>
 
 
