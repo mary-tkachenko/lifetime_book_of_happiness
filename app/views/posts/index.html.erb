@@ -3,13 +3,40 @@
 <h1>Posts</h1>
 
 <h1>Here you can search</h1>
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :text_cont, "Text contains"%>
-    <%= f.text_field :text_cont%>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+
+<%= form_tag("/posts", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
 <% end %>
+
+ <% if @your_search != nil and @your_search.length > 0 %>
+  <% @your_search.each do |your_search| %>
+      <td><%= link_to 'Show', your_search %></td>
+        <td><%= link_to 'Edit', edit_post_path(your_search) %></td>
+        <td><%= link_to 'Destroy', your_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="/posts/<%=your_search.id%>"><%= your_search.text %></a></td>
+        <td><%= your_search.date %></td>
+  <% end %>
+<% end %>
+
+
+<%= link_to 'New Post', new_post_path %>
+
+
+<form>
+  <select name='year' onchange='this.form.submit()'>
+    <option value="all">Select a year</option>
+    <%= options_for_select(@unique_years, params[:year]) %>
+  </select>
+
+   <select name='month' onchange='this.form.submit()'>
+    <option value="all">Select a month</option>
+    <%= options_for_select(@unique_months, params[:month]) %>
+  </select>
+
+  <noscript><input type="submit" value="Submit"></noscript>
+</form>
 
 <table>
   <thead>
@@ -39,27 +66,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
-
-<form>
-  <select name='year' onchange='this.form.submit()'>
-  <option>Select a year</option>
-  <p><% @unique_year.each do |year|%></p>
-    <option><%= year %></option>
-    <% end %>
-  </select>
-  <noscript><input type="submit" value="Submit"></noscript>
-</form>
-
-<% @posts_by_year.each do |post_by_year| %>
-<p>
-  <a href="/posts/<%=post_by_year.id%>"><%= post_by_year.text %></a>
-  <%= post_by_year.date %>
-  <% post_by_year.tag_list.each do |tags| %>
-    <%= tags%>
-  <% end %>
-</p>
-<% end %>

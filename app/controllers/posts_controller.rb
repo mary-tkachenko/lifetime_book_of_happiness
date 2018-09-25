@@ -10,14 +10,34 @@ class PostsController < ApplicationController
     else
       @posts = @search.result.sort_by &:created_at
     end
+    @unique_years = Post.select("date").map{ |i| i.date.year }.uniq
+    @unique_months = [
+      ['January', 1],
+      ['February', 2],
+      ['March', 3],
+      ['April', 4],
+      ['May', 5],
+      ['June', 6],
+      ['July', 7],
+      ['August', 8],
+      ['September', 9],
+      ['October', 10],
+      ['November', 11],
+      ['December', 12],
+    ]
 
-    @unique_year = Post.select("date").map{ |i| i.date.year }.uniq
-    @unique_month = Post.select("date").map{ |i| i.date.month }.uniq
+    if params[:year] == 'all' or not params.key?(:year)
+      @posts = Post.all
+    else
+      @posts = Post.where('extract(year from date) = ?', params[:year])
+    end
 
-    @posts_by_year = Post.where('extract(year  from date) = ?', params[:year])
-    puts @posts_by_year
-
-  
+    if params[:month] and params[:month] != 'all'
+      @posts = @posts.where('extract(month from date) = ?', params[:month])
+    end
+    if params[:q] != '' 
+      @your_search = Post.where("text like ?", "#{params[:q]}%")
+    end
   end
 
   def book
@@ -27,7 +47,17 @@ class PostsController < ApplicationController
     @unique_years = Post.select("date").map{ |i| i.date.year }.uniq
     @unique_months = [
       ['January', 1],
+      ['February', 2],
+      ['March', 3],
+      ['April', 4],
+      ['May', 5],
+      ['June', 6],
+      ['July', 7],
+      ['August', 8],
       ['September', 9],
+      ['October', 10],
+      ['November', 11],
+      ['December', 12],
     ]
 
     if params[:year] == 'all' or not params.key?(:year)
