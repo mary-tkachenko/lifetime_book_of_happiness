@@ -92,7 +92,7 @@ class PostsController < ApplicationController
   end
 
   def gallery
-    @posts = Post.all
+    @posts = Post.all.order(:created_at)
   end
 
   # GET /posts/1/edit
