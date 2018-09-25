@@ -101,7 +101,7 @@ select:-webkit-autofill:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(225, 225, 225, 0.19);
 }
 
-#page_heart {
+.page_heart {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -117,7 +117,70 @@ select:-webkit-autofill:focus {
   margin-top: 20px;
   
 }
-
 .userpage {
   margin-top: 53px;
+}
+
+.every_page_heart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  margin-top: 20px;
+}
+
+#navbar {
+  border: 1px solid white;
+  background-color:#ec4b4e; 
+  color: white;
+}
+
+#navbar a {
+  color: white;
+  
+}
+
+#navbar a:hover {
+  background-color: white;
+  color: #ec4b4e;
+
+}
+
+#sign_out_layout, #edit_profile_layout {
+  background-color: white;
+}
+#sign_out_layout a, #edit_profile_layout a {
+  color: #ec4b4e;
+}
+
+#sign_out_layout a:hover, #edit_profile_layout a:hover {
+  color: black;
+}
+
+.devise:hover {
+  background-color: white;
+  color: black;
+}
+
+// Tags
+#tag_cloud {
+  width: 1000px;
+  // line-height: 1.6em;
+  margin: 200px;
+  margin-top: 50px;
+  line-height: 50px;
+}
+.s, .m, .l {
+  color:#ec4b4e;
+  padding: 5px;
+  border: 1px solid;
+  margin: 20px;
+
+}
+a:visited {
+  color: #ec4b4e;
+}
+.s:hover, .m:hover, .l:hover {
+  background-color: white;
+  color: black;
 }
