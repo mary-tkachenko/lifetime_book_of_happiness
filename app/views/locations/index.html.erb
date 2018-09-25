@@ -1,5 +1,5 @@
 
-  <h1>YOUR MAP OF HAPPINESS</h1>
+<h2 class="section_title">YOUR MAP OF HAPPINESS</h2>
   <div id="map"></div>
   <script>
     function initMap(){
@@ -25,11 +25,9 @@
             coords:{lat: <%= post.latitude %> ,lng:<%= post.longitude %>},
             <%specific_post = Post.find(post.id)%>
             <% if specific_post.uploads.length != 0%>
-              <%specific_post.uploads.each do |image| %>
-                content:'<h1><%= image_tag image%> </br><%= post.text%></h1>',
-              <% end %>
+                content:'<p class="map"><%specific_post.uploads.each do |image| %><%= image_tag image%><% end %> </br><a href="/posts/<%= post.id%>"><%= post.text %></a></p>',
             <% else %>
-                content:'<h1><%= post.text%></h1>',
+                content:'<p class="map"><%= post.text %></p>',
             <% end %>
           },
           <% end %>

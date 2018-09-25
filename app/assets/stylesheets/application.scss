@@ -18,7 +18,9 @@
 // Map
   #map{
     height:600px;
-    width:100%;
+    width:93%;
+    margin-left: 50px;
+    margin-bottom: 50px;
   }
 
 // Welcome page
@@ -329,4 +331,12 @@ td a:hover {
 
 #back_to {
   margin-bottom: 50px;
+}
+
+.map img {
+  height: 100px;
+  padding: 10px;
+}
+.map a:hover {
+  background-color: transparent;
 }
