@@ -100,7 +100,7 @@ select:-webkit-autofill:focus {
 }
 
 .submit_button:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(225, 225, 225, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .page_heart {
@@ -358,3 +358,20 @@ td a:hover {
   color: white;
 }
 
+.create_tag {
+  margin-left: 50px;
+}
+.create_tag {
+  font-size: 15px;
+  font-family: 'Noto Sans', sans-serif;
+  
+}
+
+#search_tag_form form {
+  margin-left: 50px;
+}
+
+
+#book_image_cover img {
+  height: 400px;
+}

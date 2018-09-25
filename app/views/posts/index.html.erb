@@ -68,12 +68,13 @@
 </table>
 
 
-
-<%= form_tag("/posts", method: "get", :class => 'search_form') do %>
-  <%= label_tag(:q, "SEARCH POST:", :class => 'search_for') %>
-  <%= text_field_tag(:q)%>
-  <%= submit_tag("Search", :class => 'search_submit' ) %>
-<% end %>
+<div id="search_tag_form">
+  <%= form_tag("/posts", method: "get", :class => 'search_form') do %>
+    <%= label_tag(:q, "SEARCH POST:", :class => 'search_for') %>
+    <%= text_field_tag(:q)%>
+    <%= submit_tag("Search", :class => 'search_submit' ) %>
+  <% end %>
+</div>
 
  <% if @your_search != nil and @your_search.length > 0 %>
   <table class="ui selectable celled table" id="post_form">
