@@ -1,7 +1,8 @@
-<h1>Gallery</h1>
-
-<%@posts.each do |post|%>
- <% post.uploads.each do |image|%>
-    <a href="posts/<%= image.record_id %>"><%= image_tag image %></a>
- <% end %>
-<% end %>
+<h2 class="section_title">GALLERY</h2>
+<div id="gallery">
+    <%@posts.each do |post|%>
+    <% post.uploads.each do |image|%>
+        <a href="posts/<%= image.record_id %>"><%= image_tag image %></a>
+    <% end %>
+    <% end %>
+</div>
