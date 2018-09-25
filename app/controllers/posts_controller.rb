@@ -6,10 +6,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).sort_by &:created_at
-    else
-      @posts = @search.result.sort_by &:created_at
+      @posts_taged = Post.tagged_with(params[:tag]).sort_by &:created_at
     end
+    
     @unique_years = Post.select("date").map{ |i| i.date.year }.uniq
     @unique_months = [
       ['January', 1],
@@ -35,8 +34,9 @@ class PostsController < ApplicationController
     if params[:month] and params[:month] != 'all'
       @posts = @posts.where('extract(month from date) = ?', params[:month])
     end
-    if params[:q] != '' 
-      @your_search = Post.where("text like ?", "#{params[:q]}%")
+
+    if params[:q] and params[:q] != '' 
+      @your_search = Post.where("text like ?", "%#{params[:q]}%")
     end
   end
 
