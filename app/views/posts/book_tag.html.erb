@@ -14,6 +14,7 @@
     <p class="book_title" style="margin-top: 150px;">MY LIFETIME BOOK OF HAPPINESS</p> <p> ABOUT <%=params[:search] %></p>
     <p class="book_image_cover"><img src="/book.png"></p>
     </div>
+    <div class="hard"></div>
   <% if @tags.length != 0 %>
       <% @tags.each do |taged|%>
     <div class="page"> 
@@ -30,6 +31,7 @@
       " Sorry, there are no posts by tag "<%=params[:search] %>."
   <% end %>
     <div class="hard"></div>
+     <div class="hard"></div>
   </div>
 </div>
 
