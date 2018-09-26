@@ -28,15 +28,15 @@ class PostsController < ApplicationController
     if params[:year] == 'all' or not params.key?(:year)
       @posts = Post.all.order(:created_at)
     else
-      @posts = Post.where('extract(year from date) = ?', params[:year]).order(:created_at)
+      @posts = Post.where('extract(year from date) = ?', params[:year]).order(:date)
     end
 
     if params[:month] and params[:month] != 'all'
-      @posts = @posts.where('extract(month from date) = ?', params[:month]).order(:created_at)
+      @posts = @posts.where('extract(month from date) = ?', params[:month]).order(:date)
     end
 
     if params[:q] and params[:q] != '' 
-      @your_search = Post.where("text like ?", "%#{params[:q]}%").order(:created_at)
+      @your_search = Post.where("text like ?", "%#{params[:q]}%").order(:date)
     end
   end
 
@@ -63,11 +63,11 @@ class PostsController < ApplicationController
     if params[:year] == 'all' or not params.key?(:year)
       @posts = Post.all.order(:created_at)
     else
-      @posts = Post.where('extract(year from date) = ?', params[:year]).order(:created_at)
+      @posts = Post.where('extract(year from date) = ?', params[:year]).order(:date)
     end
 
     if params[:month] and params[:month] != 'all'
-      @posts = @posts.where('extract(month from date) = ?', params[:month]).order(:created_at)
+      @posts = @posts.where('extract(month from date) = ?', params[:month]).order(:date)
     end
   end
 
@@ -92,7 +92,7 @@ class PostsController < ApplicationController
   end
 
   def gallery
-    @posts = Post.all.order(:created_at)
+    @posts = Post.all.order(:date)
   end
 
   # GET /posts/1/edit
