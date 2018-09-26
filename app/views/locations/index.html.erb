@@ -27,7 +27,7 @@
             <% if specific_post.uploads.length != 0%>
                 content:'<p class="map"><%specific_post.uploads.each do |image| %><%= image_tag image%><% end %> </br><a href="/posts/<%= post.id%>"><%= post.text %></a></p>',
             <% else %>
-                content:'<p class="map"><%= post.text %></p>',
+                content:'<p class="map"><a href="/posts/<%= post.id%>"><%= post.text %></a></p>',
             <% end %>
           },
           <% end %>
