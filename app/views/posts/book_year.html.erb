@@ -17,8 +17,17 @@
 
 <div id="flipbook">
 	<div class="hard">
-  <p class="book_title" style="margin-top: 150px;">MY LIFETIME BOOK OF HAPPINESS</p> <p> BY <%=params[:year] %> <%=params[:month] %> </p>
-  <p id="book_image_cover"><img src="/book.png"></p>
+    <p class="book_title" style="margin-top: 150px;">MY LIFETIME BOOK OF HAPPINESS</p>
+    <% if params[:year] and params[:year] != 'all' %>
+      <p>
+        BY
+        <% if params[:month] and params[:month] != 'all' %>
+          <%= Date::MONTHNAMES[params[:month].to_i] %>
+        <% end %>
+        <%= params[:year] %>
+      </p>
+    <% end %>
+    <p id="book_image_cover"><img src="/book.png"></p>
   </div>
   <% @posts.each do |post|%>
     <div class="pages">
