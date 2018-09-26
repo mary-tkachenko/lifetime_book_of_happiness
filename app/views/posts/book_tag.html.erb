@@ -8,22 +8,6 @@
   </p>
 <% end %>
 
-<% if @tags.length != 0 %>
-    <% @tags.each do |taged|%>
-    <p>
-        <%= taged.date %>
-        <%= taged.text %>
-        <% if taged.uploads.length != 0%>
-          <% taged.uploads.each do |image| %>
-            <%= image_tag image%>
-          <% end %>
-        <% end %>
-    </p>
-    <% end %>
-    <% elsif params[:search] != nil && @tags.length == 0 %>
-    " Sorry, there are no posts by tag "<%=params[:search] %>."
-<% end %>
-
 <div id="flipbook">
 	<div class="hard"> 
   <p class="book_title" style="margin-top: 150px;">MY LIFETIME BOOK OF HAPPINESS</p> <p> ABOUT <%=params[:search] %></p>
@@ -32,11 +16,11 @@
 <% if @tags.length != 0 %>
     <% @tags.each do |taged|%>
 	<div class="pages"> 
-  <%= taged.text %>
-  <%= taged.date %>
+  <p class="book_text"><%= taged.text %></p>
+  <p class="book_date"><%= taged.date %></p>
   <% if taged.uploads.length != 0%>
     <% taged.uploads.each do |image| %>
-      <%= image_tag image%>
+     <p> <%= image_tag image, :class => 'book_image'%></p>
     <% end %>
   <% end %>
   </div>
@@ -54,41 +38,11 @@
   });
 </script>
 
-<style type="text/css">
-  #flipbook {
-    opacity:1;
-    margin-left: 50px;
-    margin-bottom: 100px;
-  }
+<%# <style type="text/css">
 
-  .hard {
-    background-color: #ec4b4e;
-    color: white;
-    font-size: 20px;
-    font-family: 'Noto Sans', sans-serif;
-    text-align: center;
-  }
-
-  .hard p {
-    color: white;
-    font-size: 20px;
-    font-family: 'Noto Sans', sans-serif;
-    text-transform: uppercase;
-  }
-  .pages {
-    opacity:1;
-    background-color: white;
-  
-  }
-
-  #flipbook .page-wrapper{
-   perspective: 2000px;
 }
 
-#flipbook .page {
-border: 2px solid #ec4b4e;
-}
 
-</style>
+</style> %>
 
 
