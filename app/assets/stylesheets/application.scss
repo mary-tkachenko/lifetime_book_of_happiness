@@ -435,3 +435,17 @@ td a:hover {
 #book_by_date {
   margin-left: 50px;
 }
+
+#post_text {
+  text-indent: 20px;
+}
+
+#post_form {
+  td {
+    word-break: break-word;
+  }
+  td.nobreak {
+    word-break: normal;
+    white-space: nowrap;
+  }
+}
