@@ -59,10 +59,10 @@
             <%specific_post = Post.find(post.id)%>
             <% if specific_post.uploads.length != 0%>
               <%specific_post.uploads.each do |image| %>
-                content:'<h1><%= image_tag image%> </br><%= post.text%></h1>',
+                content:'<h1><%= image_tag image%> </br><%= escape_javascript post.text%></h1>',
               <% end %>
             <% else %>
-                content:'<h1><%= post.text%></h1>',
+                content:'<h1><%= escape_javascript post.text%></h1>',
             <% end %>
           },
           <% end %>

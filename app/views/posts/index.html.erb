@@ -52,7 +52,7 @@
       <% @posts.each do |post| %>
       <tr>
         <td><a href="/posts/<%=post.id%>"><%= post.text %></a></td>
-        <td><%= post.date %></td>
+        <td class="nobreak"><%= post.date.to_formatted_s(:long) %></td>
         <td>
           <% post.tag_list.each do |tag| %>
           <a href='/tags/<%= tag %>'><%= tag%></a>

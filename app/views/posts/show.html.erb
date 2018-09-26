@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="specific_post">
   <p id="post_text">
-    <%= @post.text %>
+    <%= simple_format @post.text %>
   </p>
 
   <% if @post.uploads.length != 0 %>

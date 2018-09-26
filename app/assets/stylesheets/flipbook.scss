@@ -1,0 +1,83 @@
+.flipbook-wrapper {
+    margin: 30px auto 50px auto;
+    width: 1000px;
+}
+
+// Book styling
+#flipbook {
+    width: 1000px;
+    height: 700px;
+    margin: 0;
+    overflow: hidden;
+
+    .page {
+        background-color:#ccc;
+        width: 500px;
+        height: 700px;
+        background-color: white;
+        background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2014/09/handmade-paper-pattern.jpg');
+    }
+
+    .page.hard {
+        background: #ec4b4e;
+        color: white;
+        font-size: 20px;
+        font-family: 'Noto Sans', sans-serif;
+        text-align: center;
+    }
+
+    .hard p {
+        color: white;
+        font-size: 20px;
+        font-family: 'Noto Sans', sans-serif;
+        text-transform: uppercase;
+    }
+
+    .page-wrapper{
+        -webkit-perspective:2000px;
+        -moz-perspective: 2000px;
+        -ms-perspective: 2000px;
+        perspective: 2000px;
+    }
+
+    .shadow,
+   &.shadow{
+        -webkit-box-shadow: 0 4px 10px #666;
+        -moz-box-shadow: 0 4px 10px #666;
+        -ms-box-shadow: 0 4px 10px #666;
+        -o-box-shadow: 0 4px 10px #666;
+        box-shadow: 0 4px 10px #666;
+    }
+
+    .book_image_cover img {
+        height: 400px;
+    }
+
+    .book_image {
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .book_text {
+        padding: 20px;
+        font-size: 15px;
+        font-family: 'Noto Sans', sans-serif;
+        text-indent: 20px;
+        padding-bottom: 10px;
+    }
+
+    .book_date {
+        padding-top: 10px;
+        padding-left: 20px;
+        font-size: 15px;
+        font-family: 'Noto Sans', sans-serif;
+        text-indent: 20px;
+    }
+
+
+}
+
+
+

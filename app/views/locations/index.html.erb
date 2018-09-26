@@ -25,9 +25,9 @@
             coords:{lat: <%= post.latitude %> ,lng:<%= post.longitude %>},
             <%specific_post = Post.find(post.id)%>
             <% if specific_post.uploads.length != 0%>
-                content:'<p class="map"><%specific_post.uploads.each do |image| %><%= image_tag image%><% end %> </br><a href="/posts/<%= post.id%>"><%= post.text %></a></p>',
+                content:'<p class="map"><%specific_post.uploads.each do |image| %><%= image_tag image%><% end %> </br><a href="/posts/<%= post.id%>"><%= escape_javascript post.text %></a></p>',
             <% else %>
-                content:'<p class="map"><a href="/posts/<%= post.id%>"><%= post.text %></a></p>',
+                content:'<p class="map"><a href="/posts/<%= post.id%>"><%= escape_javascript post.text %></a></p>',
             <% end %>
           },
           <% end %>
